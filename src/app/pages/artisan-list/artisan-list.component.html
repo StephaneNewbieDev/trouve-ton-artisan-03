@@ -1,0 +1,40 @@
+<section class="container py-5">
+    <h2 class="mb-4 text-primary">Tous les artisans</h2>
+  
+    <input
+      type="text"
+      class="form-control mb-4"
+      placeholder="Rechercher par nom, spécialité ou ville"
+      [(ngModel)]="searchTerm"
+    />
+  
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let artisan of filteredArtisans">
+        <div class="card h-100 shadow-sm">
+            <a [routerLink]="['/artisan', artisan.id]">
+                <img
+                  [src]="artisan.image"
+                  class="card-img-top"
+                  [alt]="artisan.nom"
+                  [title]="artisan.nom"
+              />
+              </a>
+              
+          <div class="card-body">
+            <h5 class="card-title">{{ artisan.nom }}</h5>
+            <p class="card-text">
+              {{ artisan.specialite }} à {{ artisan.ville }}
+            </p>
+            <p class="text-muted">⭐ {{ artisan.note }}</p>
+            <a
+              [href]="artisan.site"
+              target="_blank"
+              class="btn btn-outline-primary btn-sm"
+              >Voir le site</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

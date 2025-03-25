@@ -1,0 +1,24 @@
+<section class="container py-5" *ngIf="artisan">
+    <h2 class="text-primary mb-4">{{ artisan.nom }}</h2>
+    <p><strong>{{ artisan.specialite }}</strong> à {{ artisan.ville }}</p>
+    <p>Note : ⭐ {{ artisan.note }}</p>
+    <p>{{ artisan.description }}</p>
+    <a [href]="artisan.site" target="_blank" class="btn btn-outline-primary btn-sm">Voir le site</a>
+  
+    <hr class="my-4" />
+  
+    <h4 class="mb-3">Contacter {{ artisan.nom }}</h4>
+    <form (ngSubmit)="envoyerMessage()">
+      <div class="mb-3">
+        <input type="text" class="form-control" placeholder="Votre nom" [(ngModel)]="nom" name="nom" required />
+      </div>
+      <div class="mb-3">
+        <input type="text" class="form-control" placeholder="Sujet" [(ngModel)]="sujet" name="sujet" required />
+      </div>
+      <div class="mb-3">
+        <textarea class="form-control" rows="4" placeholder="Message" [(ngModel)]="message" name="message" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Envoyer</button>
+    </form>
+  </section>
+  
