@@ -1,37 +1,45 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ArtisanService } from '../../services/artisan.service';
-import { Artisan } from '../../models/artisan';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-
+import { Artisan } from '../../models/artisan';
+import { ArtisanService } from '../../services/artisan.service';
 
 @Component({
   selector: 'app-artisan-list',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, FormsModule, RouterModule], // ✅
-  providers: [ArtisanService],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './artisan-list.component.html',
-  styleUrls: ['./artisan-list.component.scss']
+  styleUrls: ['./artisan-list.component.scss'],
 })
 export class ArtisanListComponent implements OnInit {
   artisans: Artisan[] = [];
-  searchTerm: string = '';
+  filteredArtisans: Artisan[] = [];
+  searchTerm = '';
+  selectedCategory = 'Tous';
 
   constructor(private artisanService: ArtisanService) {}
 
   ngOnInit(): void {
-    this.artisanService.getArtisans().subscribe(data => {
+    this.artisanService.getArtisans().subscribe((data: Artisan[]) => {
       this.artisans = data;
+      this.filteredArtisans = data;
     });
   }
 
-  get filteredArtisans(): Artisan[] {
-    return this.artisans.filter(artisan =>
-      artisan.nom.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-      artisan.specialite.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-      artisan.ville.toLowerCase().includes(this.searchTerm.toLowerCase())
-    );
+  filterArtisans(): void {
+    const term = this.searchTerm.toLowerCase();
+    this.filteredArtisans = this.artisans.filter((artisan) => {
+      const matchTerm =
+        artisan.name.toLowerCase().includes(term) ||
+        artisan.specialty.toLowerCase().includes(term) ||
+        artisan.location.toLowerCase().includes(term);
+
+      const matchCategory =
+        this.selectedCategory === 'Tous' ||
+        artisan.category === this.selectedCategory;
+
+      return matchTerm && matchCategory;
+    });
   }
 }

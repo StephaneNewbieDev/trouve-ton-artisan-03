@@ -1,0 +1,45 @@
+// Couleurs du site
+$fond-clair: #f1f8fc;
+$bleu-principal: #0074c7;
+$bleu-fonce: #00497c;
+$gris-fonce: #384050;
+$rouge: #cd2c2e;
+$vert: #82b864;
+
+.header-custom {
+  background-color: $bleu-fonce;
+
+  .navbar-brand {
+    color: $fond-clair;
+    font-size: 1.4rem;
+    text-decoration: none;
+
+    &:hover {
+      color: $vert;
+    }
+  }
+
+  .nav-link {
+    color: $fond-clair;
+    font-weight: 500;
+    margin-right: 1rem;
+
+    &:hover {
+      color: $bleu-principal;
+    }
+  }
+  .logo {
+    height: 50px;
+  }
+  
+
+  .btn-recherche {
+    background-color: $bleu-principal;
+    color: white;
+
+    &:hover {
+      background-color: $bleu-fonce;
+    }
+  }
+  
+}

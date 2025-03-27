@@ -1,40 +1,58 @@
 <section class="container py-5">
-    <h2 class="mb-4 text-primary">Tous les artisans</h2>
-  
-    <input
-      type="text"
-      class="form-control mb-4"
-      placeholder="Rechercher par nom, spécialité ou ville"
-      [(ngModel)]="searchTerm"
-    />
-  
-    <div class="row g-4">
-      <div class="col-md-4" *ngFor="let artisan of filteredArtisans">
-        <div class="card h-100 shadow-sm">
-            <a [routerLink]="['/artisan', artisan.id]">
-                <img
-                  [src]="artisan.image"
-                  class="card-img-top"
-                  [alt]="artisan.nom"
-                  [title]="artisan.nom"
-              />
-              </a>
-              
-          <div class="card-body">
-            <h5 class="card-title">{{ artisan.nom }}</h5>
-            <p class="card-text">
-              {{ artisan.specialite }} à {{ artisan.ville }}
-            </p>
-            <p class="text-muted">⭐ {{ artisan.note }}</p>
-            <a
-              [href]="artisan.site"
-              target="_blank"
-              class="btn btn-outline-primary btn-sm"
-              >Voir le site</a
-            >
-          </div>
+  <h2 class="mb-4 text-primary">Tous les artisans</h2>
+
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <input
+        type="text"
+        [(ngModel)]="searchTerm"
+        (input)="filterArtisans()"
+        class="form-control"
+        placeholder="Rechercher par nom, spécialité ou ville"
+      />
+    </div>
+    <div class="col-md-6">
+      <select
+        [(ngModel)]="selectedCategory"
+        (change)="filterArtisans()"
+        class="form-select"
+        title="Filtrer par catégorie"
+      >
+        <option value="Tous">Toutes les catégories</option>
+        <option value="Bâtiment">Bâtiment</option>
+        <option value="Fabrication">Fabrication</option>
+        <option value="Alimentation">Alimentation</option>
+        <option value="Services">Services</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-md-4" *ngFor="let artisan of filteredArtisans">
+      <div class="card h-100 shadow-sm">
+        <img
+          [src]="artisan.image || 'https://via.placeholder.com/300x200?text=Artisan'"
+          [alt]="artisan.name"
+          class="card-img-top"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ artisan.name }}</h5>
+          <p class="card-text">
+            {{ artisan.specialty }} à {{ artisan.location }}
+          </p>
+          <p class="text-muted">
+            <i class="bi bi-star-fill text-warning"></i> {{ artisan.note }}
+          </p>
+          <a
+            *ngIf="artisan.website"
+            [href]="artisan.website"
+            target="_blank"
+            class="btn btn-outline-primary btn-sm"
+          >
+            Voir le site
+          </a>
         </div>
       </div>
     </div>
-  </section>
-  
+  </div>
+</section>

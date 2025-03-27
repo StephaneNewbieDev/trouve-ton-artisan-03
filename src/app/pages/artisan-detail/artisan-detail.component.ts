@@ -27,10 +27,11 @@ export class ArtisanDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.artisanService.getArtisans().subscribe(data => {
-      this.artisan = data.find(a => a.id === id);
-    });
+    const id = this.route.snapshot.paramMap.get('id'); // on garde l'id en string
+this.artisanService.getArtisans().subscribe(data => {
+  this.artisan = data.find(a => a.id === id);
+});
+
   }
 
   envoyerMessage(): void {
@@ -38,11 +39,11 @@ export class ArtisanDetailComponent implements OnInit {
       nom: this.nom,
       sujet: this.sujet,
       message: this.message,
-      destinataire: this.artisan?.nom
+      destinataire: this.artisan?.name
     });
-
-    alert('Message envoyé à ' + this.artisan?.nom + ' ✅');
-
+    
+    alert('Message envoyé à ' + this.artisan?.name + ' ✅');
+    
     // Réinitialisation du formulaire
     this.nom = '';
     this.sujet = '';

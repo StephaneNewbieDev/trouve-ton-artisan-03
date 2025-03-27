@@ -1,41 +1,30 @@
 <section class="container py-5" *ngIf="artisan">
-  <h2 class="text-primary mb-4">{{ artisan.nom }}</h2>
-  <p><strong>Spécialité :</strong> {{ artisan.specialite }}</p>
-  <p><strong>Ville :</strong> {{ artisan.ville }}</p>
-  <p><strong>Note :</strong> ⭐ {{ artisan.note }}</p>
-  <p><strong>Description :</strong> {{ artisan.description }}</p>
-  <p>
-    <a [href]="artisan.site" target="_blank" class="btn btn-outline-primary btn-sm">
-      Visiter le site de {{ artisan.nom }}
-    </a>
-  </p>
+  <h2 class="text-primary mb-4">{{ artisan.name }}</h2>
+  <p><strong>Spécialité :</strong> {{ artisan.specialty }}</p>
+  <p><strong>Ville :</strong> {{ artisan.location }}</p>
+  <p><strong>Note :</strong> {{ artisan.note }}</p>
+  <p><strong>Description :</strong> {{ artisan.about }}</p>
+
+  <a *ngIf="artisan.website" [href]="artisan.website" target="_blank" class="btn btn-outline-primary btn-sm">
+    Visiter le site de {{ artisan.name }}
+  </a>
 
   <hr class="my-4" />
-
-  <h3 class="mb-3">Contacter {{ artisan.nom }}</h3>
+  
+  <h3 class="mb-3">Contacter {{ artisan.name }}</h3>
   <form (ngSubmit)="envoyerMessage()" class="row g-3">
     <div class="col-md-6">
       <label for="nom" class="form-label">Votre nom</label>
       <input type="text" id="nom" [(ngModel)]="nom" name="nom" class="form-control" required />
     </div>
-
     <div class="col-md-6">
       <label for="sujet" class="form-label">Sujet</label>
       <input type="text" id="sujet" [(ngModel)]="sujet" name="sujet" class="form-control" required />
     </div>
-
     <div class="col-12">
       <label for="message" class="form-label">Message</label>
-      <textarea
-        id="message"
-        [(ngModel)]="message"
-        name="message"
-        class="form-control"
-        rows="5"
-        required
-      ></textarea>
+      <textarea [(ngModel)]="message" name="message" id="message" class="form-control" rows="5" required></textarea>
     </div>
-
     <div class="col-12">
       <button type="submit" class="btn btn-primary">Envoyer</button>
     </div>

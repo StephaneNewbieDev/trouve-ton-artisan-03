@@ -1,10 +1,13 @@
 export interface Artisan {
-  id: number;
-  nom: string;
-  specialite: string;
-  ville: string;
-  note: number;
-  image: string;
-  description: string;
-  site: string;
+  id: string;
+  name: string;
+  specialty: string;
+  note: string;
+  location: string;
+  about: string;
+  email: string;
+  website: string;
+  category: string;
+  top: boolean;
+  image: string; // ✅ Ajout nécessaire
 }
