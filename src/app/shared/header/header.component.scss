@@ -1,45 +1,49 @@
-// Couleurs du site
-$fond-clair: #f1f8fc;
-$bleu-principal: #0074c7;
-$bleu-fonce: #00497c;
-$gris-fonce: #384050;
-$rouge: #cd2c2e;
-$vert: #82b864;
+.header {
+  background-color: #f1f8fc;
+  border-bottom: 2px solid #0074c7;
 
-.header-custom {
-  background-color: $bleu-fonce;
-
-  .navbar-brand {
-    color: $fond-clair;
-    font-size: 1.4rem;
-    text-decoration: none;
-
-    &:hover {
-      color: $vert;
+  .logo {
+    height: 60px;
+    width: auto;
+  
+    @media (max-width: 992px) { // tablettes
+      height: 45px;
     }
-  }
+  
+    @media (max-width: 768px) { // mobile
+      height: 35px;
+    }
+  
+    @media (max-width: 480px) { // très petit mobile
+      height: 30px;
+    }
+  
 
   .nav-link {
-    color: $fond-clair;
-    font-weight: 500;
-    margin-right: 1rem;
+    color: #00497c;
+    margin-left: 15px;
+
+    &.active {
+      font-weight: bold;
+      color: #0074c7;
+    }
 
     &:hover {
-      color: $bleu-principal;
+      color: #cd2c2e;
     }
   }
-  .logo {
-    height: 50px;
-  }
+
+  .site-title {
+    font-size: 1.5rem;
+    color: #00497c;
   
-
-  .btn-recherche {
-    background-color: $bleu-principal;
-    color: white;
-
-    &:hover {
-      background-color: $bleu-fonce;
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+    }
+  
+    @media (max-width: 480px) {
+      font-size: 1rem;
     }
   }
-  
+  }
 }
