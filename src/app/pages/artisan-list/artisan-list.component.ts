@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { Artisan } from '../../models/artisan';
@@ -8,7 +9,7 @@ import { ArtisanService } from '../../services/artisan.service';
 @Component({
   selector: 'app-artisan-list',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule],
+  imports: [CommonModule, FormsModule, RouterModule, HttpClientModule],
   templateUrl: './artisan-list.component.html',
   styleUrls: ['./artisan-list.component.scss'],
 })

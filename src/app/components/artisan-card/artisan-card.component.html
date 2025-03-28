@@ -1,8 +1,8 @@
-<div class="card text-center">
-  <div class="card-header">{{ artisan.specialty }}</div>
-  <div class="card-body">
-    <h5 class="card-title">{{ artisan.name }}</h5>
-    <p class="card-text">{{ artisan.specialty }} à {{ artisan.location }}</p>
+<div class="artisan-card text-center">
+  <div class="artisan-header">{{ artisan.specialty }}</div>
+  <div class="artisan-body">
+    <h5 class="artisan-title">{{ artisan.name }}</h5>
+    <p class="artisan-text">{{ artisan.specialty }} à {{ artisan.location }}</p>
     <p class="star">⭐ {{ artisan.note }}</p>
     <a [href]="artisan.website" target="_blank" class="btn btn-outline-primary btn-site">Voir le site</a>
   </div>

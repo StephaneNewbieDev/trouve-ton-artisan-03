@@ -177,10 +177,6 @@
   }
 </style>
 
-<app-header></app-header>
-
-<main class="py-4">
-  <router-outlet></router-outlet>
-</main>
-
+<app-header (search)="onSearch($event)"></app-header>
+<router-outlet></router-outlet>
 <app-footer></app-footer>

@@ -11,4 +11,10 @@ import { FooterComponent } from './shared/footer/footer.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {}
+export class AppComponent {
+  searchTerm: string = '';
+
+  onSearch(term: string) {
+    this.searchTerm = term;
+  }
+}

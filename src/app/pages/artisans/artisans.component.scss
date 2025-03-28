@@ -1,0 +1,60 @@
+.artisan-card {
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #fff;
+  }
+  
+  .artisan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  }
+  
+  .artisan-header {
+    background-color: #e9ecef;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #6c757d;
+    padding: 2rem 1rem;
+  }
+  
+  .artisan-body {
+    padding: 1rem 1.5rem;
+  }
+  
+  .artisan-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #384050;
+  }
+  
+  .artisan-text {
+    color: #555;
+    margin-bottom: 0.5rem;
+  }
+  
+  .star {
+    color: #f0ad4e;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+  
+  .btn-site {
+    margin-top: 1rem;
+    font-weight: 500;
+    border-radius: 8px;
+    color: #0074c7;
+    border-color: #0074c7;
+  }
+  
+  .btn-site:hover {
+    background-color: #0074c7;
+    color: #fff;
+  }
+  

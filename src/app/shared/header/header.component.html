@@ -1,14 +1,42 @@
 <header class="header d-flex align-items-center justify-content-between p-3">
+  <!-- Logo -->
   <a routerLink="/" class="d-flex align-items-center text-decoration-none">
-    <img src="assets/img/logo01.png" alt="Logo" class="logo me-2" />
+    <img
+      src="assets/img/logo01.png"
+      alt="Logo"
+      class="logo me-2"
+      width="200"
+      height="80"
+    />
   </a>
 
+  <!-- Menu -->
   <nav>
     <ul class="nav">
-      <li class="nav-item"><a routerLink="/batiment" routerLinkActive="active" class="nav-link">Bâtiment</a></li>
-      <li class="nav-item"><a routerLink="/services" routerLinkActive="active" class="nav-link">Services</a></li>
-      <li class="nav-item"><a routerLink="/fabrication" routerLinkActive="active" class="nav-link">Fabrication</a></li>
-      <li class="nav-item"><a routerLink="/alimentation" routerLinkActive="active" class="nav-link">Alimentation</a></li>
+      <li class="nav-item">
+        <a routerLink="/batiment" routerLinkActive="active" class="nav-link">Bâtiment</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/services" routerLinkActive="active" class="nav-link">Services</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/fabrication" routerLinkActive="active" class="nav-link">Fabrication</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/alimentation" routerLinkActive="active" class="nav-link">Alimentation</a>
+      </li>
     </ul>
   </nav>
+
+  <!-- Barre de recherche -->
+  <div class="search-bar ms-3">
+    <input
+      type="text"
+      placeholder="Rechercher un artisan..."
+      class="form-control"
+      (input)="handleInput($event)"
+/>
+
+
+  </div>
 </header>
