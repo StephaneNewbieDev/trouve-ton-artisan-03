@@ -1,0 +1,81 @@
+.fiche-artisan {
+  padding: 2rem;
+  background-color: #f1f8fc;
+  font-family: 'Graphik', sans-serif;
+
+  .artisan-info {
+    background: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    color: #384050;
+
+    h2 {
+      color: #00497c;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .specialty,
+    .location {
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .note {
+      font-size: 1.2rem;
+      color: #f0ad4e;
+      margin-bottom: 1rem;
+    }
+
+    .about {
+      font-size: 1rem;
+      color: #555;
+    }
+  }
+
+  .contact-form {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+    h3 {
+      color: #0074c7;
+      margin-bottom: 1rem;
+    }
+
+    .form-control {
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      padding: 0.75rem 1rem;
+    }
+
+    .btn {
+      background-color: #0074c7;
+      color: #fff;
+      font-weight: 500;
+      padding: 0.6rem 1.5rem;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background-color: #00497c;
+      }
+    }
+  }
+
+  .external-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: #82b864;
+    font-weight: 500;
+    text-decoration: none;
+
+    &:hover {
+      color: #cd2c2e;
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,9 +1,39 @@
-.not-found {
-    max-width: 300px;
-    min-height: 60vh;
+.not-found-container {
     background-color: #f1f8fc;
-
-    img {
-        max-width: 300px;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Graphik', sans-serif;
+  
+    .not-found-img {
+      width: 240px;
+      max-width: 90%;
     }
-}
+  
+    h1 {
+      font-size: 4rem;
+      color: #0074c7;
+      
+    }
+  
+    p {
+      color: #384050;
+      font-size: 1.25rem;
+      margin-top: 1rem;
+    }
+  
+    a.btn {
+      border-radius: 8px;
+      background-color: #0074c7;
+      color: #fff;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #00497c;
+      }
+    }
+  }
+  

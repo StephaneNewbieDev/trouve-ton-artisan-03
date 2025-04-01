@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArtisanService } from '../../services/artisan.service';
-import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { NgFor, NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 @Component({
   selector: 'app-artisans',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule],
+  imports: [CommonModule, RouterModule, NgFor, FormsModule],
+  providers: [ArtisanService],
   templateUrl: './artisans.component.html',
-  styleUrls: ['./artisans.component.scss']
+  styleUrl: './artisans.component.scss',
 })
 export class ArtisansComponent {
   artisans: any[] = [];

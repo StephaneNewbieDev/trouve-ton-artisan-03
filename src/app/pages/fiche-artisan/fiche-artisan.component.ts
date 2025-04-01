@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { ArtisanService } from '../services/artisan.service';
-import { Artisan } from '../models/artisan';
+import { ArtisanService } from '../../services/artisan.service';
+import { Artisan } from '../../models/artisan';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 

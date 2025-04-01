@@ -8,19 +8,14 @@ export const routes: Routes = [
   },
   {
     path: 'artisans',
-    loadComponent: () => import('./pages/artisans/artisans.component').then(m => m.ArtisansComponent)
-  }
-  ,
-  {
-    path: 'artisan/:id',
-    loadComponent: () => import('./pages/artisan-detail/artisan-detail.component')
-      .then(c => c.ArtisanDetailComponent)
+    loadComponent: () => import('./pages/artisans/artisans.component')
+      .then(m => m.ArtisansComponent)
   },
   {
     path: 'artisan/:id',
-    loadComponent: () =>
-      import('./pages/fiche-artisan.component').then((m) => m.FicheArtisanComponent),
-  },  
+    loadComponent: () => import('./pages/fiche-artisan/fiche-artisan.component')
+      .then((m) => m.FicheArtisanComponent),
+  },
   {
     path: 'contact',
     loadComponent: () => import('./pages/contact/contact.component')

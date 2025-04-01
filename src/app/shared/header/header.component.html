@@ -1,42 +1,55 @@
-<header class="header d-flex align-items-center justify-content-between p-3">
-  <!-- Logo -->
-  <a routerLink="/" class="d-flex align-items-center text-decoration-none">
-    <img
-      src="assets/img/logo01.png"
-      alt="Logo"
-      class="logo me-2"
-      width="200"
-      height="80"
-    />
-  </a>
+<header class="header navbar navbar-expand-lg p-3">
+  <div class="container-fluid">
+    <!-- Logo -->
+    <a routerLink="/" class="navbar-brand d-flex align-items-center">
+      <img
+        src="assets/img/logo01.png"
+        alt="Logo"
+        class="logo me-2"
+        width="200"
+        height="80"
+      />
+    </a>
 
-  <!-- Menu -->
-  <nav>
-    <ul class="nav">
-      <li class="nav-item">
-        <a routerLink="/batiment" routerLinkActive="active" class="nav-link">Bâtiment</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/services" routerLinkActive="active" class="nav-link">Services</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/fabrication" routerLinkActive="active" class="nav-link">Fabrication</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/alimentation" routerLinkActive="active" class="nav-link">Alimentation</a>
-      </li>
-    </ul>
-  </nav>
+    <!-- Burger Button -->
+    <button
+      class="navbar-toggler ms-auto"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <!-- Barre de recherche -->
-  <div class="search-bar ms-3">
-    <input
-      type="text"
-      placeholder="Rechercher un artisan..."
-      class="form-control"
-      (input)="handleInput($event)"
-/>
+    <!-- Menu et recherche -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav me-3">
+        <li class="nav-item">
+          <a routerLink="/batiment" routerLinkActive="active" class="nav-link">Bâtiment</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/services" routerLinkActive="active" class="nav-link">Services</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/fabrication" routerLinkActive="active" class="nav-link">Fabrication</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/alimentation" routerLinkActive="active" class="nav-link">Alimentation</a>
+        </li>
+      </ul>
 
-
+      <!-- Barre de recherche -->
+      <div class="search-bar">
+        <input
+          type="text"
+          placeholder="Rechercher un artisan..."
+          class="form-control"
+          (input)="handleInput($event)"
+        />
+      </div>
+    </div>
   </div>
 </header>
