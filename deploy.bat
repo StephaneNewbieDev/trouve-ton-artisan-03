@@ -1,35 +1,16 @@
 @echo off
-color 0A
-echo ---------------------------------------------------
-echo 📦 BUILD ANGULAR (production)
-echo ---------------------------------------------------
+echo 📦 Suppression de l'ancien dossier docs...
+rmdir /s /q docs
 
-ng build --configuration=production --base-href=/trouve-ton-artisan-03/
+echo ⚙️ Construction du projet Angular...
+ng build --output-path=dist/trouve-ton-artisan-03
 
-IF %ERRORLEVEL% NEQ 0 (
-    color 0C
-    echo ❌ ÉCHEC DU BUILD ANGULAR.
-    pause
-    exit /b %ERRORLEVEL%
-)
+echo 📁 Copie des fichiers générés dans docs...
+xcopy dist\trouve-ton-artisan-03 docs /E /I /Y
 
-echo ---------------------------------------------------
-echo 🚀 DÉPLOIEMENT SUR GITHUB PAGES
-echo ---------------------------------------------------
+echo 📄 Duplication index.html → 404.html...
+copy docs\index.html docs\404.html
 
-npx angular-cli-ghpages --dir=dist
-
-IF %ERRORLEVEL% NEQ 0 (
-    color 0C
-    echo ❌ ÉCHEC DU DÉPLOIEMENT GITHUB PAGES.
-    pause
-    exit /b %ERRORLEVEL%
-)
-
-color 0A
-echo ---------------------------------------------------
-echo ✅ SITE EN LIGNE !
-echo 🌐 https://stephanenewbievdev.github.io/trouve-ton-artisan-03/
-echo ---------------------------------------------------
-
+echo 🚀 Déploiement terminé. Tu peux vérifier ici :
+echo https://stephanenewbiedev.github.io/trouve-ton-artisan-03/
 pause
