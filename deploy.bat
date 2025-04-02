@@ -1,36 +1,35 @@
 @echo off
 color 0A
 echo ---------------------------------------------------
-echo 📦 Construction de l'application Angular...
+echo 📦 BUILD ANGULAR (production)
 echo ---------------------------------------------------
 
-ng build --output-path=dist --base-href=/trouve-ton-artisan-03/
+ng build --configuration=production --base-href=/trouve-ton-artisan-03/
 
 IF %ERRORLEVEL% NEQ 0 (
     color 0C
-    echo ❌ Échec du build Angular.
+    echo ❌ ÉCHEC DU BUILD ANGULAR.
     pause
     exit /b %ERRORLEVEL%
 )
 
 echo ---------------------------------------------------
-echo 🚀 Déploiement vers GitHub Pages...
+echo 🚀 DÉPLOIEMENT SUR GITHUB PAGES
 echo ---------------------------------------------------
 
 npx angular-cli-ghpages --dir=dist
 
 IF %ERRORLEVEL% NEQ 0 (
     color 0C
-    echo ❌ Échec du déploiement GitHub Pages.
+    echo ❌ ÉCHEC DU DÉPLOIEMENT GITHUB PAGES.
     pause
     exit /b %ERRORLEVEL%
 )
 
 color 0A
 echo ---------------------------------------------------
-echo ✅ Déploiement terminé avec succès !
-echo 🌐 Ton site est disponible à l'adresse :
-echo https://stephanenewbievdev.github.io/trouve-ton-artisan-03/
+echo ✅ SITE EN LIGNE !
+echo 🌐 https://stephanenewbievdev.github.io/trouve-ton-artisan-03/
 echo ---------------------------------------------------
 
 pause
