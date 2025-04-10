@@ -6,11 +6,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { ArtisanCardComponent } from '../../components/artisan-card/artisan-card.component';
 import { Title, Meta } from '@angular/platform-browser';
 import { AppComponent } from '../../app.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, ArtisanCardComponent],
+  imports: [RouterModule,CommonModule, HttpClientModule, ArtisanCardComponent],
   providers: [ArtisanService],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']

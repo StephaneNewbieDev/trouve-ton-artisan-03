@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, model, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArtisanService } from '../../services/artisan.service';
 import { RouterModule } from '@angular/router';
 import { NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-artisans',
