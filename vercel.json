@@ -1,5 +1,8 @@
 {
     "rewrites": [
-        { "source": "/(.*)", "destination": "dist/trouve-ton-artisan-03/browser/index.html" }
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
+        }
     ]
 }
