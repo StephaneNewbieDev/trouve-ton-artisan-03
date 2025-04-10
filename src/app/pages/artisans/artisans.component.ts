@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArtisanService } from '../../services/artisan.service';
 import { RouterModule } from '@angular/router';
@@ -14,7 +14,7 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
   templateUrl: './artisans.component.html',
   styleUrl: './artisans.component.scss',
 })
-export class ArtisansComponent {
+export class ArtisansComponent implements OnInit {
   artisans: any[] = [];
   filteredArtisans: any[] = [];
   searchText: string = '';

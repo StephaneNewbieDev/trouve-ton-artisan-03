@@ -18,7 +18,7 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "baseHref": "/trouve-ton-artisan-03/",
-            "outputPath": "dist/trouve-ton-artisan-03",
+            "outputPath": "dist",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [

@@ -1,10 +1,11 @@
 import { Routes } from '@angular/router';
+import { ArtisanListComponent } from './pages/artisan-list/artisan-list.component';
 
 export const routes: Routes = [
   {
     path: '',
     loadComponent: () => import('./pages/home/home.component')
-      .then(c => c.HomeComponent)
+      .then(c => c.HomeComponent),
   },
   {
     path: 'artisans',
@@ -14,7 +15,11 @@ export const routes: Routes = [
   {
     path: 'artisan/:id',
     loadComponent: () => import('./pages/fiche-artisan/fiche-artisan.component')
-      .then((m) => m.FicheArtisanComponent),
+      .then(m => m.FicheArtisanComponent),
+  },
+  {
+  path: './trouve-ton-artisan-03/artisans',
+component: ArtisanListComponent,
   },
   {
     path: 'contact',
